@@ -19,6 +19,7 @@ class MachineID {
     const MATSUSHITA_AM33 = 0x1d3;
     const POWERPC_LITTLE_ENDIAN = 0x1f0;
     const POWERPC_FPS = 0x1f1;
+    const XBOX_360 = 0x1f2;
     const INTEL_IA64 = 0x200;
     const MIPS16 = 0x266;
     const ALPHA_AXP_64 = 0x284;
