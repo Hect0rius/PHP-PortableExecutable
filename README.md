@@ -3,10 +3,10 @@
 # [ Overview ]
 This is a simple class (with external structs) containing the structure of the protable executable file format used on windows.
 
-These scripts have only been tested on Linux/Ubuntu, I dont have a windows pc at hand, so any ammendments please push any changes for windows and mac !
+These scripts have only been tested on Linux/Ubuntu, I dont have a windows pc at hand, so any amendments please push any changes for windows and mac !
 
 # [ Features ]
-The features include full support for reading and writing PE images, both in higher endian and lower (Ive only seen lower endian so far)
+The features include full support for reading and nearly complete writing PE images, both in higher endian and lower (Ive only seen lower endian so far)
 
 # [ Examples ]
 
