@@ -130,6 +130,16 @@ class PEImage {
             $buf->NumRelocations = $this->io->readUInt32((int)$this->endian);
             $buf->NumRelocations = $this->io->readUInt16((int)$this->endian);
             $buf->Characteristics = $this->io->readUInt16((int)$this->endian);
+            
+            // Backup position.
+            $pos = $this->io->getPosition();
+            
+            $this->io->setPosition($buf->RawDataPtr);
+            $buf->Data = $this->io->readBytesStr($buf->SizeOfRawData);
+            
+            // Reposition.
+            $this->io->setPosition($pos);
+            unset($pos);
             $this->imgSections[] = $buf;
             unset($buf);
         }
@@ -230,6 +240,16 @@ class PEImage {
             $io->writeUInt32($this->imgSections[$i]->NumRelocations, (int)$this->endian);
             $io->writeUInt16($this->imgSections[$i]->NumRelocations, (int)$this->endian);
             $io->writeUInt16($this->imgSections[$i]->Characteristics, (int)$this->endian);
+            
+            // backup Position.
+            $pos = $io->getPosition();
+            
+            $io->setPosition($this->imgSections[$i]->RawDataPtr);
+            $io->writeBytes($this->imgSections[$i]->Data);
+            
+            // Reposition.
+            $io->setPosition($pos);
+            unset($pos);
         }
     }
     

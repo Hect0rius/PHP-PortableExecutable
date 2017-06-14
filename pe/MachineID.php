@@ -1,7 +1,5 @@
 <?php
-
 // With thanks to https://en.wikibooks.org/wiki/X86_Disassembly/Windows_Executable_Files#COFF_Header for machine id's.
-
 class MachineID {
     const INTEL386 = 0x14c;
     const X64 = 0x8664;
@@ -29,6 +27,4 @@ class MachineID {
     const MITSUBISHI_M32R_LE = 0x9041;
     const CLR_PURE_MSIL = 0xc0ee;
 }
-
 ?>
-

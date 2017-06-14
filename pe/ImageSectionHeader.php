@@ -11,6 +11,7 @@ class ImageSectionHeader {
     public $NumRelocations;
     public $NumLineNumbers;
     public $Characteristics;
+    public $Data;
 }
 
 ?>
