@@ -65,7 +65,7 @@ class PEImage {
         }
         
         $this->imgDosHeader->e_lfanew = $this->io->readUInt16((int)$this->endian);
-        $this->imgDosHeader->e_rstub = $this->io->readUInt16((int)$this->endian);
+        $this->imgDosHeader->e_rstub = $this->io->readBytesStr((int)$this->imgDosHeader->e_lfanew - 61);
     }
     private function readFileHeader() {
         $this->io->setPosition((int)$this->imgDosHeader->e_lfanew);
@@ -164,7 +164,7 @@ class PEImage {
         }
         
         $io->writeUInt16($this->imgDosHeader->e_lfanew, (int)$this->endian);
-        $io->writeUInt16($this->imgDosHeader->e_rstub, (int)$this->endian);
+        $io->writeBytes($this->imgDosHeader->e_rstub);
     }
     public function writeFileHeader($io) {
         if(!is_object($io) || get_class($io) !== 'fileStream') { throw new Exception('writeFileHeader: Invalid IO/FileStream Input...'); }
