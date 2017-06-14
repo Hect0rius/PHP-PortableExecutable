@@ -2,7 +2,7 @@
 /*
  * This is a near enough clone of c#'s binary reader/write combined...
  * Currently Unsigned/signed numbers are supported, still needs Unicode support and float support.
- * Written by Hect0r Xorius <sysop@staticpi.net>
+ * Written by Hect0r Xorius <staicpi.net@gmail.com>
  */
 // Get Machine Endian, Gets the current machines endian type.
 function getMachineEndian() {
