@@ -110,7 +110,7 @@ class PEImage {
         $this->imgOptHeader->SizeOfStackReserve = $this->io->readUInt32((int)$this->endian);
         $this->imgOptHeader->SizeOfStackCommit = $this->io->readUInt32((int)$this->endian);
         $this->imgOptHeader->SizeOfHeapReserve = $this->io->readUInt32((int)$this->endian);
-        $this->imgOptHeader->SizeOfHeadCommit = $this->io->readUInt32((int)$this->endian);
+        $this->imgOptHeader->SizeOfHeapCommit = $this->io->readUInt32((int)$this->endian);
         $this->imgOptHeader->LoaderFlags = $this->io->readUInt32((int)$this->endian);
         $this->imgOptHeader->NumberOfRvaAndSizes = $this->io->readUInt32((int)$this->endian);
     }
@@ -215,7 +215,7 @@ class PEImage {
         $io->writeUInt32($this->imgOptHeader->SizeOfStackReserve, (int)$this->endian);
         $io->writeUInt32($this->imgOptHeader->SizeOfStackCommit, (int)$this->endian);
         $io->writeUInt32($this->imgOptHeader->SizeOfHeapReserve, (int)$this->endian);
-        $io->writeUInt32($this->imgOptHeader->SizeOfHeadCommit, (int)$this->endian);
+        $io->writeUInt32($this->imgOptHeader->SizeOfHeapCommit, (int)$this->endian);
         $io->writeUInt32($this->imgOptHeader->LoaderFlags, (int)$this->endian);
         $io->writeUInt32($this->imgOptHeader->NumberOfRvaAndSizes, (int)$this->endian);
     }
